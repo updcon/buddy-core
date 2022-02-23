@@ -19,19 +19,20 @@
             [buddy.core.hash :as hash]
             [buddy.core.bytes :as bytes]
             [clojure.java.io :as io])
-  (:import org.bouncycastle.crypto.Mac
-           org.bouncycastle.crypto.BlockCipher
-           org.bouncycastle.crypto.digests.SHA256Digest
-           org.bouncycastle.crypto.digests.SHA3Digest
-           org.bouncycastle.crypto.digests.Blake2bDigest
-           org.bouncycastle.crypto.generators.Poly1305KeyGenerator
-           org.bouncycastle.crypto.engines.AESFastEngine
-           org.bouncycastle.crypto.engines.SerpentEngine
-           org.bouncycastle.crypto.engines.TwofishEngine
-           org.bouncycastle.crypto.params.KeyParameter
-           org.bouncycastle.crypto.params.ParametersWithIV
-           org.bouncycastle.crypto.macs.HMac
-           org.bouncycastle.crypto.macs.Poly1305))
+  (:import
+   org.bouncycastle.crypto.Mac
+   org.bouncycastle.crypto.BlockCipher
+   org.bouncycastle.crypto.digests.SHA256Digest
+   org.bouncycastle.crypto.digests.SHA3Digest
+   org.bouncycastle.crypto.digests.Blake2bDigest
+   org.bouncycastle.crypto.generators.Poly1305KeyGenerator
+   org.bouncycastle.crypto.engines.AESFastEngine
+   org.bouncycastle.crypto.engines.SerpentEngine
+   org.bouncycastle.crypto.engines.TwofishEngine
+   org.bouncycastle.crypto.params.KeyParameter
+   org.bouncycastle.crypto.params.ParametersWithIV
+   org.bouncycastle.crypto.macs.HMac
+   org.bouncycastle.crypto.macs.Poly1305))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Abstraction
@@ -67,7 +68,6 @@
   "Given dynamic type engine, try resolve it to
   valid engine instance. By default accepts keywords
   and functions."
-  {:doc false}
   [engine]
   (cond
     (keyword? engine)
@@ -117,6 +117,11 @@
   (let [digest (hash/resolve-digest-engine
                 (:digest options :sha256))]
     (assert digest "Invalid digest engine.")
+    (HMac. digest)))
+
+(defmethod engine :hmac+sha1
+  [options]
+  (let [digest (hash/resolve-digest-engine :sha1)]
     (HMac. digest)))
 
 (defmethod engine :hmac+sha256

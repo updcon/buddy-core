@@ -1,5 +1,64 @@
 # Changelog
 
+## Version 1.10.413
+
+Date: 2021-01-13
+
+- Dependencies update.
+- Convert to deps+tools.build
+
+## Version 1.10.1
+
+Date: 2021-05-02
+
+- Change the jvm build target to 1.8
+
+
+## Version 1.10.0
+
+Date: 2021-05-01
+
+- Update BC to 1.68
+- Update other dependencies.
+
+
+## Version 1.9.0
+
+Date: 2020-12-03
+
+- Update dsa code (now used bouncy castle native function instead of third party dep).
+- Reflection fixes.
+- Update BC to 1.67
+
+
+## Version 1.8.0
+
+Date: 2020-09-15
+
+- Add `bytes->b64` function to `buddy.core.codecs`.
+- Add `bytes->b64u` function to `buddy.core.codecs`.
+- Add `b64->bytes` function to `buddy.core.codecs`.
+- Add `b64u->bytes` function to `buddy.core.codecs`.
+- Deprecate `buddy.core.codecs.base64`.
+
+
+## Version 1.7.1
+
+Date: 2020-09-14
+
+- Minor documentation changes.
+
+
+## Version 1.7.0
+
+Date: 2020-09-14
+
+- Update BC to 1.66
+- Update commons-codec to 1.15
+- Update cheshire to 5.10.0
+- Minor improvement on curve detecton on jwk (thanks to Denis Shilov).
+
+
 ## Version 1.6.0
 
 Date: 2019-06-28
@@ -12,8 +71,8 @@ Date: 2019-06-28
 Date: 2018-06-02
 
 - Update bouncy castle to 1.59
-- Add jwk reading and conversion to JCA (thanks to Denis Shilov).
-- Add JWK loading and exporting support (thanks to Denis Shilov)
+- Add JWK reading and conversion to JCA (thanks to Denis Shilov).
+- Add JWK loading and exporting support (thanks to Denis Shilov).
 
 
 ## Version 1.4.0
