@@ -1,11 +1,28 @@
 # Changelog
 
+## Version 1.11.423
+
+Date: 2023-06-28
+
+- Update dependencies
+- Add some improvements to codecs ns
+
+
+## Version 1.11.418
+
+Date: 2023-05-20
+
+- Update dependencies
+- Update documentation.
+
+
 ## Version 1.10.413
 
 Date: 2021-01-13
 
 - Dependencies update.
 - Convert to deps+tools.build
+
 
 ## Version 1.10.1
 
